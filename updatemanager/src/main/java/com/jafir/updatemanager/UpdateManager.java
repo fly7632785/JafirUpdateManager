@@ -46,7 +46,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class UpdateManager {
 
-    private String URL = "http://jafir-my-love.oss-cn-shanghai.aliyuncs.com/update_info.xml";
+    private String URL = "http://jafir-my-love.oss-cn-shanghai.aliyuncs.com/test_update_info.xml";
     private String mDownLoadPath = Environment.getExternalStorageDirectory() + "/download";
     /**
      * 用的另一个开源库的progressbar
@@ -101,7 +101,7 @@ public class UpdateManager {
         this.URL = URL;
     }
 
-    public void setmDownLoadPath(String mDownLoadPath) {
+    public void setDownLoadPath(String mDownLoadPath) {
         this.mDownLoadPath = mDownLoadPath;
     }
 
