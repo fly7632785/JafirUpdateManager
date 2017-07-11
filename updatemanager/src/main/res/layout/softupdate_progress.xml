@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dpv="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.jafir.updatemanager.DownloadProgressBar
+        android:id="@+id/download_view"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
+        dpv:circleBackgroundColor="@color/colorAccent"
+        dpv:progressBackgroundColor="@color/colorAccent"
+        dpv:progressColor="@color/colorPrimary"
+        dpv:drawingColor="@color/colorPrimary"
+        dpv:progressDuration="2000"
+        dpv:resultDuration="5000"
+        dpv:circleRadius="48dp"
+        dpv:lineWidth="3dp"
+        dpv:strokeWidth="3dp"
+        dpv:overshootValue="2.5"
+        />
+</LinearLayout>

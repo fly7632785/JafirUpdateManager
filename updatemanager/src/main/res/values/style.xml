@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DownloadProgressView"><attr format="dimension" name="circleRadius"/><attr format="dimension" name="strokeWidth"/><attr format="dimension" name="lineWidth"/><attr format="integer" name="progressDuration"/><attr format="integer" name="resultDuration"/><attr format="color" name="progressBackgroundColor"/><attr format="color" name="drawingColor"/><attr format="color" name="progressColor"/><attr format="color" name="circleBackgroundColor"/><attr format="float" name="overshootValue"/></declare-styleable>
+    <!-- From: file:/build/library/src/main/res/values/strings.xml -->
+    <eat-comment/>
+</resources>
