@@ -46,8 +46,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class UpdateManager {
 
-    private static String URL = "http://jafir-my-love.oss-cn-shanghai.aliyuncs.com/update_info.xml";
-    private static String mDownLoadPath = Environment.getExternalStorageDirectory() + "/download";
+    private String URL = "http://jafir-my-love.oss-cn-shanghai.aliyuncs.com/update_info.xml";
+    private String mDownLoadPath = Environment.getExternalStorageDirectory() + "/download";
     /**
      * 用的另一个开源库的progressbar
      */
@@ -97,14 +97,17 @@ public class UpdateManager {
         this.mContext = context;
     }
 
-    public static void setURL(String URL) {
-        UpdateManager.URL = URL;
+    public void setURL(String URL) {
+        this.URL = URL;
+    }
+
+    public void setmDownLoadPath(String mDownLoadPath) {
+        this.mDownLoadPath = mDownLoadPath;
     }
 
     public void setShowDialog(boolean showDialog) {
         isShowDialog = showDialog;
     }
-
 
     /**
      * 设置progressBar的样式
@@ -114,7 +117,6 @@ public class UpdateManager {
     public void setProgressStyle(ProgressStyle progressStyle) {
         this.progressStyle = progressStyle;
     }
-
 
     /**
      * @param drawingColor
@@ -294,10 +296,7 @@ public class UpdateManager {
         if (progressStyle.equals(ProgressStyle.Cool)) {
             progressLayout = inflater.inflate(R.layout.softupdate_progress, null);
             mDownloadProgressBar = (DownloadProgressBar) progressLayout.findViewById(R.id.download_view);
-            mDownloadProgressBar.setmDrawingColor(mDrawingColor);
-            mDownloadProgressBar.setmProgressColor(mProgressColor);
-            mDownloadProgressBar.setmCircleBackgroundColor(mCircleBackgroundColor);
-            mDownloadProgressBar.setmProgressBackgroundColor(mProgressBackgroundColor);
+            setProgressStyle();
             mDownloadProgressBar.playManualProgressAnimation();
         } else {
             progressLayout = inflater.inflate(R.layout.native_progress, null);
@@ -320,6 +319,21 @@ public class UpdateManager {
         mDownloadDialog.show();
         // 现在文件
         downloadApk();
+    }
+
+    private void setProgressStyle() {
+        if (mDrawingColor != 0) {
+            mDownloadProgressBar.setmDrawingColor(mDrawingColor);
+        }
+        if (mProgressColor != 0) {
+            mDownloadProgressBar.setmProgressColor(mProgressColor);
+        }
+        if (mCircleBackgroundColor != 0) {
+            mDownloadProgressBar.setmCircleBackgroundColor(mCircleBackgroundColor);
+        }
+        if (mProgressBackgroundColor != 0) {
+            mDownloadProgressBar.setmProgressBackgroundColor(mProgressBackgroundColor);
+        }
     }
 
     /**

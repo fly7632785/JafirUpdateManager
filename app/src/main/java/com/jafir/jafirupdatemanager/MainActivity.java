@@ -34,12 +34,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 UpdateManager manager = new UpdateManager(MainActivity.this);
-                manager.setCoolProgressStyle(
-                        getResources().getColor(R.color.yellow),
-                        getResources().getColor(R.color.colorAccent),
-                        getResources().getColor(R.color.green),
-                        getResources().getColor(R.color.orange)
-                );
+                manager.setProgressStyle(UpdateManager.ProgressStyle.Native);
+                //set xml URL on the server
+//                manager.setURL("http://jafir-my-love.oss-cn-shanghai.aliyuncs.com/test_update_info.xml");
+                //set download path, { Environment.getExternalStorageDirectory()+"/download } is default
+//                manager.setmDownLoadPath(Environment.getExternalStorageDirectory()+"/downloadApk");
+                //you can set cool progressbar colors
+//                manager.setCoolProgressStyle(
+//                        getResources().getColor(R.color.yellow),
+//                        getResources().getColor(R.color.colorAccent),
+//                        getResources().getColor(R.color.green),
+//                        getResources().getColor(R.color.orange)
+//                );
                 manager.start();
             }
         });
